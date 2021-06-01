@@ -12,6 +12,7 @@ services:
         container_name: grafana
         image: grafana/grafana:7.5.5
         volumes:
+            - ./grafana/etc:/etc/grafana:ro
             - grafana-log:/var/log/grafana
         links:
             - influxdb:influxdb
@@ -26,8 +27,7 @@ services:
         image: telegraf
     
         volumes:
-            - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
-                   
+            - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro       
         ports:
             - 57000:57000
         depends_on:
