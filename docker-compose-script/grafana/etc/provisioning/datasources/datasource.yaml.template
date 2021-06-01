@@ -1,0 +1,10 @@
+apiVersion: 1
+
+datasources:
+  - name: InfluxDB
+    type: influxdb
+    access: proxy
+    database: {{ influxdb_database_name }}
+    user: {{ influxdb_admin_name }}
+    password: {{ influxdb_admin_pass }}
+    url: http://influxdb:8086

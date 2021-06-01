@@ -1,0 +1,9 @@
+[[inputs.cisco_telemetry_mdt]]
+ transport = "grpc"
+ service_address = ":57000"
+
+[[outputs.influxdb]]
+  database = "{{ influxdb_database_name }}"
+  urls = [ "http://influxdb:8086" ]
+  username = "{{ influxdb_admin_name }}"
+  password = "{{ influxdb_admin_pass }}"
